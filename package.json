@@ -1,14 +1,21 @@
 {
-  "name": "passport-mail",
-  "version": "1.0.1",
-  "description": "Mail ru authentication strategy for Passport.",
+  "name": "passport-mail-ts",
+  "version": "1.0.2",
+  "description": "Fork Mail.ru authentication strategy for PassportJS",
   "keywords": [
     "passport",
     "mail",
     "mailru",
     "mail-ru",
     "passport mailru",
+    "passport mailru ts",
+    "passport mailru typescript",
+    "passport mail",
+    "passport mail ts",
+    "passport mail typescript",
     "passport mail-ru",
+    "passport mail-ru ts",
+    "passport mail-ru typescript",
     "auth",
     "authn",
     "authentication",
@@ -16,10 +23,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/sklyukin/passport-mailru.git"
+    "url": "git://github.com/Altairko/passport-mailru.git"
   },
   "bugs": {
-    "url": "http://github.com/sklyukin/passport-mailru/issues"
+    "url": "http://github.com/Altairko/passport-mailru/issues"
   },
   "license": "MIT",
   "licenses": [
@@ -28,20 +35,36 @@
       "url": "http://opensource.org/licenses/MIT"
     }
   ],
-  "main": "./lib",
+  "main": "dist",
+  "types": "dist/index.d.ts",
   "dependencies": {
     "passport-oauth2": "1.x.x"
   },
   "devDependencies": {
-    "make-node": "0.3.x",
-    "mocha": "1.x.x",
-    "chai": "2.x.x",
-    "chai-passport-strategy": "1.x.x"
+    "@types/chai": "^4.2.14",
+    "@types/mocha": "^8.0.4",
+    "@types/node": "^14.14.7",
+    "@types/passport-oauth2": "^1.4.9",
+    "chai": "4.x.x",
+    "chai-passport-strategy": "1.x.x",
+    "esm": "^3.2.25",
+    "mocha": "8.x.x",
+    "prettier": "^2.1.2",
+    "rimraf": "^3.0.2",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.0.5"
   },
   "engines": {
-    "node": ">= 0.4.0"
+    "node": ">= 12.0.0"
   },
   "scripts": {
-    "test": "node_modules/.bin/mocha --require test/bootstrap/node test/*.test.js"
-  }
+    "build": "rimraf dist && tsc",
+    "test": "mocha --require ts-node/register test/*.test.ts"
+  },
+  "files": [
+    "dist",
+    "package.json",
+    "README.md",
+    "LICENSE"
+  ]
 }

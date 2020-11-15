@@ -1,11 +1,11 @@
-# passport-mail
+# passport-mail-ts
 
 [Passport](http://passportjs.org/) strategy for authenticating with [Mailru](http://mail.ru/)
 using the OAuth 2.0 API.
 
 ## Install
 
-    $ npm install passport-mail
+    $ npm install passport-mail-ts
 
 ## Usage
 
@@ -22,4 +22,6 @@ passport.use(new MailruStrategy({
   }
 ));
 ```
+## Credits
 
+  - [Stan](http://github.com/stan-ros)
